@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import os
 
-tmp_df = pd.read_csv('sdi_not_fill.csv')
+tmp_df = pd.read_csv('sdi.csv')
 Country = tmp_df.pop('Country')
 imputer = SimpleImputer(missing_values=np.nan, strategy='median')
 imputer = imputer.fit(tmp_df)

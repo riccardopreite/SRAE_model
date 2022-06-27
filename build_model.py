@@ -9,12 +9,10 @@ from pytorchtools import EarlyStopping
 from torch.utils.tensorboard import SummaryWriter
 writer = SummaryWriter()
 MODEL_DIR_NAME = "SRAE_model"
-# sys.path.insert(1, os.path.join(os.getcwd(), "../sustenaibility_machine_learning/preprocess"))
 sys.path.insert(1, os.path.join(os.getcwd(), "..",MODEL_DIR_NAME,"preprocess"))
 from create_bidimensional_data import split_indicators
 
 sys.path.insert(1, './srae')
-# SUSTAINABLE_PATH = os.path.join(os.getcwd(), "..","sustenaibility_machine_learning")
 SUSTAINABLE_PATH = os.path.join(os.getcwd(), "..",MODEL_DIR_NAME)
 
 MAX_EPOCH = 3

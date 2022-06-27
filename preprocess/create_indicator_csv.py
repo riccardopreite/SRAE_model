@@ -10,11 +10,10 @@ from utils import *
     When all indicators are ready `fillna.py` is executed to fill NaN value
 '''
 MODEL_DIR_NAME = "SRAE_model"
-# SUSTAINABLE_PATH = os.path.join(os.getcwd(), "..","sustenaibility_machine_learning")
 SUSTAINABLE_PATH = os.path.join(os.getcwd(), "..",MODEL_DIR_NAME)
-DATASET_OUTPUT_DIRECTORY = os.path.join("preprocess", 'datasets')
+DATASET_OUTPUT_DIRECTORY = 'datasets'
 
-DATASET_DIRECTORY = sys.argv[1] if len(sys.argv) > 1 else os.path.join('data','unsdg_dataset')
+DATASET_DIRECTORY = sys.argv[1] if len(sys.argv) > 1 else os.path.join('..','data','unsdg_dataset')
 FILTERED_COLUMN = ["Goal","Indicator","SeriesCode","SeriesDescription","GeoAreaCode","GeoAreaName","TimePeriod","Value"]
 OUTPUT_COLUMN = ["GeoAreaCode","GeoAreaName"] 
 
@@ -102,7 +101,7 @@ def split_unsdg_dataset(output_dir=''):
     
     setup_env(output_dir)
     
-    task = [item.replace('.csv', '') for item in os.listdir('data/unsdg_dataset')]
+    task = [item.replace('.csv', '') for item in os.listdir(DATASET_DIRECTORY)]
     task = [item.replace('Goal', '') for item in task]
     goals = ['Goal'+str(task)+'.csv' for task in task]
     inds = []

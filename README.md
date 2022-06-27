@@ -42,8 +42,9 @@ user@pc:~/SRAE/$ mkdir data/unsdg_dataset
 Unzip data in **data/unsdg_dataset**.
 Go to [TIME SERIES 1990-2019](https://www.sustainabledevelopmentindex.org/time-series) download and convert sdi page from xlsx file to csv. Move download file to **data/index/sdi.csv**
 
-## Dataset preprocess
 
+## Dataset preprocess
+It is higly recommended to check file since some of them can have value like ">95" or "N" and it is possible that some cases are not covered in fill_na files. The problematic files will be printed during fill_sdi.py or mean_fill_sdi.py.
 Fill sdi data:
 ```console
 user@pc:~/SRAE/$ cd data/index/
@@ -54,6 +55,7 @@ Create and fill UNSDG data:
 ```console
 user@pc:~/SRAE/$ cd preprocess
 user@pc:~/SRAE/preprocess/$ python create_indicator_csv.py
+user@pc:~/SRAE/preprocess/$ python remove_nan.py
 user@pc:~/SRAE/preprocess/$ python fillna.py
 user@pc:~/SRAE/preprocess/$ python meanfillna.py
 ```

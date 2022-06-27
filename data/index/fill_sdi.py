@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import os
 
-tmp_df = pd.read_csv('sdi_not_fill.csv')
+tmp_df = pd.read_csv('sdi.csv')
 
 Country = tmp_df.pop('Country')
 imp = IterativeImputer(max_iter=4, random_state=0, tol=0.001, min_value=tmp_df.min().min(), max_value=tmp_df.max().max())

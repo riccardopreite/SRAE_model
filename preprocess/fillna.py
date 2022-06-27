@@ -26,9 +26,12 @@ for to_fill in indicators:
     if len(tmp_df) > 7 and nan_occ < threshold:
         
         try:
-            
+            tmp_df = tmp_df.replace({'N': np.nan}, regex=True)
+            tmp_df = tmp_df.replace({'<': ''}, regex=True)
+            tmp_df = tmp_df.replace({'>': ''}, regex=True)
             GeoAreaName = tmp_df.pop('GeoAreaName')
             GeoAreaCode = tmp_df.pop('GeoAreaCode')
+            tmp_df = tmp_df.astype(float)
             tmp_df.dropna(axis=0, how="all", inplace=True)
             tmp_df.dropna(axis=1, how="all", inplace=True)
             imp = IterativeImputer(max_iter=4, random_state=0, tol=0.1, min_value=tmp_df.min().min(), max_value=tmp_df.max().max())

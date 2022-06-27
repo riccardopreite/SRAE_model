@@ -24,9 +24,13 @@ for to_fill in indicators:
     if len(tmp_df) > 7 and nan_occ < threshold:
         
         try:
-            
+            tmp_df = tmp_df.replace({'N': np.nan}, regex=True)
+            tmp_df = tmp_df.replace({'<': ''}, regex=True)
+            tmp_df = tmp_df.replace({'>': ''}, regex=True)
             GeoAreaName = tmp_df.pop('GeoAreaName')
             GeoAreaCode = tmp_df.pop('GeoAreaCode')
+            tmp_df = tmp_df.astype(float)
+
             for col in tmp_df.columns:
                 if tmp_df[col].isna().sum() == len(tmp_df[col]):
                     tmp_df.pop(col)
