@@ -69,4 +69,4 @@ user@pc:~/SRAE/SRAE_server$ python app.py
 ```
 
 ## Query example
-Load both template and query collection json from repository in Postman.
+Load both [template](https://github.com/riccardopreite/SRAE_model/blob/main/template.postman_collection.json) and [query](https://github.com/riccardopreite/SRAE_model/blob/main/query.postman_collection.json) collection json from repository in Postman.
