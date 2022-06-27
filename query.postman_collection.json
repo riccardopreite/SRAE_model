@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "c7370a40-edc5-4c95-92ce-dd5e49115b28",
+		"name": "query",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14741506"
+	},
+	"item": [
+		{
+			"name": "sdi",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "indicators",
+							"value": "{\"SI_COV_UEMP\":6.726,\"SI_POV_DAY1\":13.718,\"AG_PRD_AGVAS\":22.72,\"SH_DYN_MORT\":25.8,\"EG_EGY_CLEAN\":45.0,\"SL_EMP_EARN\":77.292,\"EN_EWT_GENPCAP\":7.824974411764706}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/query/sdi?user=user_example&name=model_example&sdi=NaN",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"query",
+						"sdi"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "user_example"
+						},
+						{
+							"key": "name",
+							"value": "model_example"
+						},
+						{
+							"key": "sdi",
+							"value": "NaN"
+						},
+						{
+							"key": "indicators",
+							"value": "None",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predict",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "indicators",
+							"value": "{\"SI_COV_UEMP\":0.877933919429779,\"SI_POV_DAY1\":29.514,\"AG_PRD_AGVAS\":3.13,\"SH_DYN_MORT\":73.0,\"EG_EGY_CLEAN\":\"None\",\"SL_EMP_EARN\":77274,\"EN_EWT_GENPCAP\":9.887}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/query/predict?user=user_example&name=model_example&sdi=0.67",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"query",
+						"predict"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "user_example"
+						},
+						{
+							"key": "name",
+							"value": "model_example"
+						},
+						{
+							"key": "sdi",
+							"value": "0.67"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

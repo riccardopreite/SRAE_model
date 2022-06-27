@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "bac1d1d5-2076-4eb2-a853-2c3bb4a9ba3f",
+		"name": "template",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14741506"
+	},
+	"item": [
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/template?user=user_example&name=model_example",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"template"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "user_example"
+						},
+						{
+							"key": "name",
+							"value": "model_example"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_example",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/template/create?user=user_example&name=model_example&indicators=['SI_POV_DAY1','SI_COV_UEMP','AG_PRD_AGVAS','SH_DYN_MORT','EG_EGY_CLEAN','SL_EMP_EARN','EN_EWT_GENPCAP']&task=['1', '2', '3', '7', '8', '12']&macro=['society','economy','environment']&is_early=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"template",
+						"create"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "user_example"
+						},
+						{
+							"key": "name",
+							"value": "model_example"
+						},
+						{
+							"key": "indicators",
+							"value": "['SI_POV_DAY1','SI_COV_UEMP','AG_PRD_AGVAS','SH_DYN_MORT','EG_EGY_CLEAN','SL_EMP_EARN','EN_EWT_GENPCAP']"
+						},
+						{
+							"key": "task",
+							"value": "['1', '2', '3', '7', '8', '12']"
+						},
+						{
+							"key": "macro",
+							"value": "['society','economy','environment']"
+						},
+						{
+							"key": "is_early",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
